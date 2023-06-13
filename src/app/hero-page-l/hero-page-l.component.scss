@@ -1,0 +1,266 @@
+@import url('../../scss/_keyframes.scss');
+@import '../../scss/_mixins.scss';
+
+#heroPageWhole{
+    height: 100vh;
+    background-color: #f9f9f9;
+    position: relative;
+    background-image: url('../../assets/heroImage.jpg');
+    background-size: cover;
+    #darkLight{
+        position: absolute;
+        top:0;
+        left:0;
+        bottom:0; 
+        right: 0;
+        background-color: #1d1d1d98;
+    }
+    // NAVIGATION CSS 
+    nav{
+        position: fixed;
+        top:0;
+        left:0;
+        width: 100%;
+    }
+
+    //CONTENT CSS START
+    .row{
+        height: 100%;
+        display: flex;
+        justify-content:space-around;
+        #mainText{
+            color:#ffffff;
+            h1{
+                font-weight: bold;
+                font-size:60px;
+                letter-spacing: 1.5px;
+                line-height: 120%;
+                z-index: 20;
+                color:#fff;
+                text-shadow: 5px 5px #00000094;
+                
+            }
+            p{
+                font-weight: lighter;
+                font-size:40px;
+                padding: 5px;
+                z-index: 20;
+                border-radius: 15px;
+                color:#fff;
+                text-shadow: 1px 1px #000;
+            }
+            img{
+                width: 20vw;
+                height: 15vw;
+            }
+            button{
+                border-radius: 50px;
+                width: 200px;
+                height: 50px;
+                opacity: 0.8;
+                background: rgb(250,78,128);
+                background: linear-gradient(90deg, rgba(250,78,128,1) 0%, rgba(0,142,255,1) 100%);
+                background-size: 400% 200%;
+                border:none;
+                transition: 0.5s;
+                color:#fff;
+                font-size:18px;
+                font-weight: bold;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        } 
+    }
+}
+
+#offers{
+    position: relative;
+    height: auto;
+    min-height: 50vh;
+    background-color: #f9f9f9;
+    padding:50px 0;
+    @media only screen and (max-height:768px){
+        min-height: 50vw;
+    }
+    .row{
+        height: 100%;
+        .cardContainer{
+            .card{
+                box-shadow: 5px 5px 10px #0000007c;
+                border:none;
+                border-radius:25px 25px 0 0;
+                .cardImg{
+                    height: 40%;
+                    overflow: hidden;
+                    position: relative;
+                    border-radius:25px 25px 0 0;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        border-radius: inherit;
+                        border-radius:25px 25px 0 0;
+                    }
+                    .slash{
+                        width: 200%;
+                        height: 50px;
+                        background-color: #fff;
+                        position: absolute;
+                        bottom:-25px;
+                        z-index: 25;
+                        margin-left:-50%;
+                        transform:rotate(2deg);
+                    }
+                }
+                .cardText{
+                    height:60%;
+                    background-color: #ffffff;
+                    border-radius: 0 0 5px 5px;
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    text-align: center;
+                    .row{
+                        .info{
+                            h3{
+                                font-size:30px;
+                                color:#000000a9;
+                            }
+                            .stars{
+                                width: 100%;
+                                height: 50px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;    
+                                font-size:23px;                
+                            }
+                        }
+                        .btnC button{
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 100px 100px 0 0;
+                            font-size:12px;
+                            font-weight: bold;
+                            line-height: 120%;
+                            border:none;
+                            box-shadow: inset 5px 5px 10px #00000057,  inset -5px -5px 10px #ffffff33;
+                            @media only screen and (min-width:968px) {
+                                font-size:18px;
+                            }
+
+                            &:hover{
+                                background-color: rgb(33, 231, 33);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ABOUT PAGE 
+#about{
+    height: 100vh;
+    min-width: 320px;
+    .row{
+        height: 100%;
+        .aboutUs{
+            height: 50%;
+            .row{
+                #aboutImg{
+                    height: 100%;
+                    border:2px solid #f9f9f9;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        border:3px solid #000000a6;
+                    }
+                }
+                #aboutText{
+                    height: 100%;
+                    .row{
+                        h2{
+                            font-weight: bold;
+                            // font-size:30px;
+                            color:#000000ad;
+                        }
+                        p{
+                            font-weight: lighter;
+                            line-height: 120%;
+                            font-size:14px;
+                            @media only screen and (min-width:968px) {
+                                font-size:22px;
+                            }
+                        }
+                        button{
+                            width: 200px;
+                            margin-left:1%;
+                            box-shadow: 5px 5px 10px #00000086;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+#howTo{
+    height: auto;
+    background-color: #1d1d1d1d;
+    .row{
+        height: 100%;
+        .cardC {
+            .card{
+                width: 100%;
+                height: 100%;
+                // background-color: beige;
+                background-color: transparent;
+                border: none;
+                border-radius: 25px;
+                .cardImg{
+                    height: 60%;
+                    padding:10px;
+                    font-size: 120px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .cardText{
+                    height: 40%;
+                    h3{
+                        font-weight: bolder;
+                        color:#000000b9;
+                        @include respectFont(14px, 15px, 18px, 24px, 24px);
+                    }
+                    p{
+                        font-weight: lighter;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#footer{
+    color:#fff;
+    height: 15vh;
+    background-color: #0e0e0e;;
+    font-size: 30px;
+}
+.starColorFill{
+    color:#f5f500
+}
+.navbar-brand{
+    letter-spacing: 1.5px;
+}
+.navbar-nav{
+    letter-spacing: 1.5px;
+    li:hover{
+        opacity: 0.78;
+        cursor: pointer;
+    }
+}

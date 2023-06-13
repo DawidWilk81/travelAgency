@@ -1,0 +1,142 @@
+
+
+<div id="heroPageWhole" class="container-fluid" #home name="home">
+    <div id="darkLight"></div>
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item text-center">
+                        <a class="nav-link active" aria-current="page" (click)="scroll(home)">Home</a>
+                    </li>
+                    <li class="nav-item text-center">
+                        <a class="nav-link active" aria-current="page" (click)="scroll(catalog)">Catalog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- START OF CURRENT CONTENT -->
+    <div class="row">
+        <div class="col-7 d-flex align-items-center justify-content-center flex-column" id="mainText">
+            <!-- <img src="../../assets/squirrel.png" alt="squirrel"> -->
+            <h1>Adventure is waiting for you.</h1>
+            <p>Most beautifull places around the globe.</p>
+            <button class="btn btn-success" (click)="scroll(catalog)">Catalog</button>
+        </div>
+    </div>
+</div>
+<div class="container-fluid m-0 p-0" id="offers" #catalog name="catalog">
+    <div class="row m-0 py-5">
+        <b class="mb-2">Frequently chosen</b>
+        <div class="col-6 col-sm-3 mt-3 cardContainer"  *ngFor="let offer of places; index as i">
+            <div class="card w-100 h-100 ">
+                <div class="cardImg">
+                    <img [src]="offer.img" alt="Travel">
+                    <div class="slash"></div>
+                </div>
+                <div class="cardText">
+                    <div class="row">
+                        <div class="col-12 h-75 info">
+                            <h3>{{ offer.place }}</h3>
+                            <div class="col-12 h-25 stars p-2 d-flex justify-content-center align-items-center">
+                                <fa-icon [icon]="star"  [ngClass]="{'starColorFill': offer.stars>i}" *ngFor="let stars of [1,2,3,4,5];index as i"></fa-icon>
+                            </div>
+                        </div>
+                        <div class="col-12 h-25 btnC">
+                            <button class="btn btn-success">Book for {{offer.price|currency}}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" id="about">
+    <div class="row d-flex flex-column">
+        <div class="col-12 aboutUs px-4">
+            <div class="row">
+                <div class="col-5 col-lg-3 p-0" id="aboutImg">
+                    <img src="../../assets/waitingMale.jpg" alt="man waiting on airport">
+                </div>
+                <div class="col-7 col-lg-9 ps-5" id="aboutText">
+                    <div class="row h-100 d-flex justify-content-center align-items-end flex-column">
+                        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Proin at ligula non ipsum fringilla tempus et non nisi.
+                            Proin sed dolor nec nisi dapibus ornare. Phasellus non tellus augue.</p>
+                        <button class="btn btn-primary">See more</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 aboutUs p-3" >
+            <div class="row ">
+                <div class="col-7 col-lg-9 ps-5" id="aboutText">
+                    <div class="row h-100 d-flex justify-content-center align-items-start flex-column">
+                        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Proin at ligula non ipsum fringilla tempus et non nisi.
+                            Proin sed dolor nec nisi dapibus ornare. Phasellus non tellus augue.</p>
+                        <button class="btn btn-primary">See more</button>
+                    </div>
+                </div>
+                <div class="col-5 col-lg-3 p-0" id="aboutImg">
+                    <img src="../../assets/plane.jpg" alt="man waiting on airport">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" id="howTo">
+    <div class="row m-0 p-0">
+        <div class="col-12 col-md-4 p-2 cardC">
+            <div class="card">
+                <div class="row">
+                    <div class="col-12 cardImg px-4">
+                        <!-- <img src="../../assets/planeSecond.jpg" alt="planeSecond"> -->
+                        <fa-icon [icon]="magnify"></fa-icon>
+                    </div>
+                    <div class="col-12 p-3 cardText d-flex justify-content-start align-items-center flex-column">
+                        <h3>Search for interesting place</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 p-2 cardC p-2">
+            <div class="card">
+                <div class="row">
+                    <div class="col-12 cardImg px-4">
+                        <fa-icon [icon]="callendar"></fa-icon>
+                    </div>
+                    <div class="col-12 p-3 cardText d-flex justify-content-start align-items-center flex-column">
+                        <h3>Book a date for your travel</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 cardC p-2">
+            <div class="card">
+                <div class="row">
+                    <div class="col-12 cardImg px-4 h-md-50">
+                        <fa-icon [icon]="like"></fa-icon>
+                    </div>
+                    <div class="col-12 p-3 cardText d-flex h-md-50 justify-content-start align-items-center flex-column">
+                        <h3>Enjoy a journey</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer" class="text-center">
+    Page made by Dawid Wilk - portfolio page
+</div>
